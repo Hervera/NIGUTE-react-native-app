@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import NavigationDrawer from './src/app/components/Sidebar/NavigationDrawer';
+import Index from './src/app';
 
 export default class App extends Component {
   render() {
-    return <NavigationDrawer />;
+    return <Index />;
   }
 }
