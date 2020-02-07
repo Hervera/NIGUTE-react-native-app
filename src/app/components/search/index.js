@@ -66,7 +66,7 @@ export default class Search extends Component {
           <Animatable.View
             animation="slideInRight"
             duration={1000}
-            style={styles.alignIcons}>
+            style={styles.searchHeader}>
             <Animatable.View
               animation={
                 this.state.searchBarFocused ? 'fadeInLeft' : 'fadeInRight'
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
   },
 
-  alignIcons: {
+  searchHeader: {
     height: 50,
     backgroundColor: 'white',
     flexDirection: 'row',
