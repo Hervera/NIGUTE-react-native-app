@@ -13,10 +13,11 @@ import {Card} from 'react-native-elements';
 import {Col, Row, Grid} from 'react-native-easy-grid';
 import LinearGradient from 'react-native-linear-gradient';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
-import SliderEntry from './SlideEntry';
+import SliderEntry from './slideEntry';
 import {topArticles, articlesList, bottomArticles} from '../dummy/articles';
 import styles, {colors} from '../styles/index.style';
 import {sliderWidth, itemWidth} from '../styles/SliderEntry.style';
+import ArticleCard from './shared/articleCard';
 
 const SLIDER_1_FIRST_ITEM = 1;
 
@@ -96,57 +97,7 @@ export default class example extends Component {
         <FlatList
           data={this.state.data}
           renderItem={({item: rowData}) => {
-            return (
-              <Card containerStyle={styles.cardStyle}>
-                <View style={styles.touchCard}>
-                  <View style={{width: '35%'}}>
-                    <TouchableOpacity>
-                      <Image
-                        source={{uri: rowData.imageUrl}}
-                        style={styles.cardImage}
-                      />
-                    </TouchableOpacity>
-                  </View>
-                  <View style={{width: '65%', flexDirection: 'column'}}>
-                    <TouchableOpacity>
-                      <Text style={styles.articleTitle}>{rowData.title}</Text>
-                    </TouchableOpacity>
-                    <View style={styles.bottomIcons}>
-                      <Grid>
-                        <Row>
-                          <Col>
-                            <TouchableOpacity style={styles.viewIcon}>
-                              <Text>24</Text>
-                              <Image
-                                source={require('../assets/images/view-icon.png')}
-                                style={styles.iconStyle}
-                              />
-                            </TouchableOpacity>
-                          </Col>
-                          <Col>
-                            <TouchableOpacity style={styles.commentIcon}>
-                              <Text>12</Text>
-                              <Image
-                                source={require('../assets/images/comment-icon.png')}
-                                style={styles.iconStyle}
-                              />
-                            </TouchableOpacity>
-                          </Col>
-                          <Col style={{alignItems: 'flex-end'}}>
-                            <TouchableOpacity>
-                              <Image
-                                source={require('../assets/images/share-icon.png')}
-                                style={styles.iconStyle}
-                              />
-                            </TouchableOpacity>
-                          </Col>
-                        </Row>
-                      </Grid>
-                    </View>
-                  </View>
-                </View>
-              </Card>
-            );
+            return <ArticleCard article={rowData} />;
           }}
           keyExtractor={(item, index) => index}
         />
