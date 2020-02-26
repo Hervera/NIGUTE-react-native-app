@@ -1,16 +1,6 @@
 import React, {Component} from 'react';
-import {
-  View,
-  ScrollView,
-  Text,
-  Image,
-  TouchableOpacity,
-  StatusBar,
-  SafeAreaView,
-} from 'react-native';
+import {View, ScrollView, Text, StatusBar, SafeAreaView} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
-import {Card} from 'react-native-elements';
-import {Col, Row, Grid} from 'react-native-easy-grid';
 import LinearGradient from 'react-native-linear-gradient';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import SliderEntry from './slideEntry';
