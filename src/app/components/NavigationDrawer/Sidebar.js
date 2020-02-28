@@ -8,6 +8,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
+import {Images} from '../../constants';
 
 class Sidebar extends Component {
   render() {
@@ -22,10 +23,7 @@ class Sidebar extends Component {
           disable={false}>
           <ScrollView>
             <View style={styles.header}>
-              <Image
-                source={require('../../assets/images/logo.png')}
-                style={styles.headerImage}
-              />
+              <Image source={Images.sidebarLogo} style={styles.headerImage} />
             </View>
             <View style={styles.line} />
             <TouchableHighlight

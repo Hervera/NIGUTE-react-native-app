@@ -2,12 +2,21 @@
 
 NIGUTE is an app that teaches how to do anything, NIGUTE shows real life problems and explains possible ways to solve them.
 
-#### Home Page Design
+#### Screens
 
-##### Iphone
+|                Home screen on Iphone                 |                Home screen on Android                 |
+| :--------------------------------------------------: | :---------------------------------------------------: |
+| ![](src/app/assets/screenshots/homePageOnIphone.gif) | ![](src/app/assets/screenshots/homePageOnAndroid.gif) |
 
-![](src/app/assets/screenshots/homePageOnIphone.gif)
 
-##### Android
+|               Categories Screen                |               About us Screen               |
+| :--------------------------------------------: | :-----------------------------------------: |
+| ![](src/app/assets/screenshots/categories.gif) | ![](src/app/assets/screenshots/aboutus.gif) |
 
-![](src/app/assets/screenshots/homePageOnAndroid.gif)
+
+
+
+|               About us Screen               |               Contact us Screen               |
+| :-----------------------------------------: | :-------------------------------------------: |
+| ![](src/app/assets/screenshots/aboutus.gif) | ![](src/app/assets/screenshots/contactus.gif) |
+
