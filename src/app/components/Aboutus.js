@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Image, ScrollView, Text} from 'react-native';
+import {Images} from '../constants';
 
 export default class Aboutus extends Component {
   render() {
@@ -8,10 +9,7 @@ export default class Aboutus extends Component {
     return (
       <ScrollView>
         <View style={styles.logoSection}>
-          <Image
-            source={require('../assets/images/logo2.png')}
-            style={styles.logImage}
-          />
+          <Image source={Images.aboutLogo} style={styles.logImage} />
         </View>
         <Text style={styles.paragraph}>{aboutusText}</Text>
         <Text style={styles.paragraph}>{aboutusText}</Text>
@@ -31,7 +29,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
   paragraph: {
     textAlign: 'justify',
     margin: 20,
