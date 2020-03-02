@@ -4,6 +4,7 @@ import {Text, ScrollView, TouchableOpacity, Image} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {categoriesList} from '../../dummy/articles';
 import {Card} from 'react-native-elements';
+import {View} from 'react-native-animatable';
 
 const numColumns = 2;
 export default class AllCategories extends Component {
@@ -39,13 +40,15 @@ export default class AllCategories extends Component {
   render() {
     return (
       <ScrollView style={styles.scrollview}>
-        <FlatList
-          style={styles.categoriesList}
-          data={this.state.data}
-          numColumns={numColumns}
-          renderItem={this.renderItem}
-          keyExtractor={(item, index) => index}
-        />
+        <View style={styles.container}>
+          <FlatList
+            style={styles.categoriesList}
+            data={this.state.data}
+            numColumns={numColumns}
+            renderItem={this.renderItem}
+            keyExtractor={(item, index) => index}
+          />
+        </View>
       </ScrollView>
     );
   }

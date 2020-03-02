@@ -43,7 +43,7 @@ export default class example extends Component {
     const {slider1ActiveSlide} = this.state;
 
     return (
-      <View style={styles.exampleContainer}>
+      <View style={styles.mainContainer}>
         <Carousel
           ref={c => (this._slider1Ref = c)}
           data={topArticles}
@@ -97,7 +97,7 @@ export default class example extends Component {
 
   bottomCarousel(title) {
     return (
-      <View style={styles.exampleContainer}>
+      <View style={styles.mainContainer}>
         <Text style={styles.title}>{title}</Text>
         <Carousel
           data={bottomArticles}

@@ -1,57 +1,50 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  ImageBackground,
-  Dimensions,
-  StatusBar,
-  KeyboardAvoidingView,
-  TextInput,
-} from 'react-native';
+import {StatusBar, KeyboardAvoidingView, TextInput, View} from 'react-native';
 import {Block, Checkbox, Text, Input, Button} from 'galio-framework';
-import {Images, niguteTheme, contactInfo} from '../constants';
+import {niguteTheme, contactInfo} from '../constants';
 import {Col, Row, Grid} from 'react-native-easy-grid';
 import {ScrollView} from 'react-native-gesture-handler';
-
-const {width, height} = Dimensions.get('screen');
+import styles from '../styles/index.style';
 
 export default class Contactus extends Component {
   render() {
     return (
       <ScrollView middle>
         <StatusBar hidden />
-        <ImageBackground
-          source={Images.ContactUsBackground}
-          style={{width, height, zIndex: 1}}>
+        <View style={styles.container}>
           <Block middle>
-            <Block style={[styles.contactUsContainer, {marginTop: 20}]}>
+            <Block style={[styles.formContainer, {marginTop: 20}]}>
               <Block middle style={styles.heading}>
                 <Text size={16} style={{padding: 20}}>
                   Contact Form
                 </Text>
               </Block>
-              <Block>
+              <Block style={styles.formBlock}>
                 <Block center>
                   <KeyboardAvoidingView behavior="padding" enabled>
                     <Block style={styles.blockInput}>
-                      <Input borderless placeholder="Your Name*" />
+                      <Input placeholder="Your Name*" style={styles.input} />
                     </Block>
                     <Block style={styles.blockInput}>
-                      <Input borderless placeholder="Your Email*" />
+                      <Input placeholder="Your Email*" style={styles.input} />
                     </Block>
                     <Block style={styles.blockInput}>
-                      <Input borderless placeholder="Your Phone Number" />
-                    </Block>
-                    <Block style={styles.blockInput}>
-                      <Input borderless placeholder="Subject" />
-                    </Block>
-                    <Block style={[styles.inputContainer, {marginBottom: 15}]}>
-                      <TextInput
-                        placeholder="Your Message*"
-                        multiline={true}
+                      <Input
+                        placeholder="Your Phone Number"
                         style={styles.input}
                       />
                     </Block>
-                    <Block row width={width * 0.75}>
+                    <Block style={styles.blockInput}>
+                      <Input placeholder="Subject" style={styles.input} />
+                    </Block>
+                    <Block style={styles.blockInput}>
+                      <TextInput
+                        placeholder="Your Message*"
+                        multiline={true}
+                        style={styles.textInput}
+                      />
+                    </Block>
+                    <Block row style={styles.checkbox}>
                       <Checkbox
                         checkboxStyle={{
                           borderWidth: 3,
@@ -60,7 +53,7 @@ export default class Contactus extends Component {
                         label="Subscribe to our"
                       />
                       <Button
-                        style={{width: 100, shadowColor: 'transparent'}}
+                        style={styles.btnLetter}
                         color="tranparent"
                         textStyle={{
                           color: niguteTheme.COLORS.PRIMARY,
@@ -70,7 +63,7 @@ export default class Contactus extends Component {
                       </Button>
                     </Block>
                     <Block middle>
-                      <Button color="primary" style={styles.createButton}>
+                      <Button color="primary" style={styles.sendButton}>
                         <Text bold size={14} color={niguteTheme.COLORS.WHITE}>
                           SEND YOUR MESSAGE
                         </Text>
@@ -102,68 +95,8 @@ export default class Contactus extends Component {
               </Block>
             </Block>
           </Block>
-        </ImageBackground>
+        </View>
       </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  contactInfo: {
-    width: width * 0.9,
-    height: 140,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 10,
-    marginTop: 0,
-    marginBottom: 20,
-    overflow: 'hidden',
-    padding: 10,
-  },
-
-  contactUsContainer: {
-    width: width * 0.9,
-    height: height * 0.78,
-    backgroundColor: '#F4F5F7',
-    borderRadius: 10,
-    shadowColor: niguteTheme.COLORS.BLACK,
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowRadius: 8,
-    shadowOpacity: 0.1,
-    elevation: 1,
-    overflow: 'hidden',
-  },
-
-  heading: {
-    backgroundColor: niguteTheme.COLORS.WHITE,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: '#8898AA',
-    borderRadius: 10,
-  },
-
-  createButton: {
-    width: width * 0.5,
-    marginTop: 25,
-    backgroundColor: niguteTheme.COLORS.PRIMARY,
-    shadowColor: 'transparent',
-  },
-
-  blockInput: {
-    width: width * 0.8,
-    marginBottom: 15,
-  },
-
-  inputContainer: {
-    height: 70,
-  },
-
-  input: {
-    height: 70,
-    backgroundColor: '#ffffff',
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 8,
-  },
-});

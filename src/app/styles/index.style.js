@@ -1,4 +1,5 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+import {niguteTheme} from '../constants';
 
 export const colors = {
   black: '#1a1917',
@@ -6,6 +7,8 @@ export const colors = {
   background1: '#ecebe9',
   background2: '#ecebe9',
 };
+
+const {width, height} = Dimensions.get('screen');
 
 export default StyleSheet.create({
   safeArea: {
@@ -15,6 +18,8 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background1,
+    width: width,
+    height: height,
   },
   gradient: {
     ...StyleSheet.absoluteFillObject,
@@ -22,13 +27,13 @@ export default StyleSheet.create({
   scrollview: {
     flex: 1,
   },
-  exampleContainer: {
+  mainContainer: {
     paddingVertical: 0,
   },
-  exampleContainerDark: {
+  mainContainerDark: {
     backgroundColor: colors.black,
   },
-  exampleContainerLight: {
+  mainContainerLight: {
     backgroundColor: 'white',
   },
   title: {
@@ -147,5 +152,79 @@ export default StyleSheet.create({
   },
   categoryTitle: {
     padding: 5,
+  },
+
+  formBlock: {
+    backgroundColor: '#fff',
+  },
+
+  formContainer: {
+    width: width * 0.9,
+    backgroundColor: '#F4F5F7',
+    borderRadius: 10,
+    shadowColor: niguteTheme.COLORS.BLACK,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowRadius: 8,
+    shadowOpacity: 0.1,
+    elevation: 1,
+    overflow: 'hidden',
+  },
+
+  contactInfo: {
+    width: width * 0.9,
+    height: 140,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    marginTop: 0,
+    marginBottom: 20,
+    overflow: 'hidden',
+    padding: 10,
+  },
+
+  heading: {
+    backgroundColor: niguteTheme.COLORS.WHITE,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: '#8898AA',
+    borderRadius: 10,
+  },
+
+  sendButton: {
+    width: width * 0.5,
+    marginTop: 15,
+    marginBottom: 25,
+    backgroundColor: niguteTheme.COLORS.PRIMARY,
+    shadowColor: 'transparent',
+  },
+
+  blockInput: {
+    width: width * 0.8,
+    marginTop: 15,
+  },
+
+  input: {
+    borderColor: '#ccc',
+  },
+
+  textInput: {
+    height: 100,
+    backgroundColor: '#fff',
+    borderColor: '#ccc',
+    borderWidth: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 4,
+  },
+
+  checkbox: {
+    width: width * 0.75,
+    marginTop: 15,
+  },
+
+  btnLetter: {
+    width: 100,
+    shadowColor: 'transparent',
   },
 });
