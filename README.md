@@ -20,3 +20,8 @@ NIGUTE is an app that teaches how to do anything, NIGUTE shows real life problem
 | :-----------------------------------------: | :-------------------------------------------: |
 | ![](src/app/assets/screenshots/aboutus.gif) | ![](src/app/assets/screenshots/contactus.gif) |
 
+
+|               Subscribe Screen                |               Settings Screen                |
+| :-------------------------------------------: | :------------------------------------------: |
+| ![](src/app/assets/screenshots/subscribe.gif) | ![](src/app/assets/screenshots/settings.gif) |
+

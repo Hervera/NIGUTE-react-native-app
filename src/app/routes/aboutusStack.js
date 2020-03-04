@@ -5,7 +5,7 @@ import HeaderLeft from '../components/shared/headerLeft';
 import HeaderRight from '../components/shared/headerRight';
 
 const screens = {
-  Abousus: {
+  Aboutus: {
     screen: Aboutus,
     navigationOptions: ({navigation}) => ({
       headerTitle: 'About us',
