@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {View, ScrollView, Text, StatusBar, SafeAreaView} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
-import LinearGradient from 'react-native-linear-gradient';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import SliderEntry from './slideEntry';
 import {topArticles, articlesList, bottomArticles} from '../dummy/articles';
 import styles, {colors} from '../styles/index.style';
-import {sliderWidth, itemWidth} from '../styles/SliderEntry.style';
+import {sliderWidth, itemWidth} from '../styles/sliderEntry.style';
 import ArticleCard from './shared/articleCard';
 
 const SLIDER_1_FIRST_ITEM = 1;
@@ -120,17 +119,6 @@ export default class example extends Component {
     );
   }
 
-  get gradient() {
-    return (
-      <LinearGradient
-        colors={[colors.background1, colors.background2]}
-        startPoint={{x: 1, y: 0}}
-        endPoint={{x: 0, y: 1}}
-        style={styles.gradient}
-      />
-    );
-  }
-
   render() {
     const carouselTop = this.topCarousel();
     const articleInFlatList = this.listArticles('Featured Articles');
@@ -143,7 +131,6 @@ export default class example extends Component {
             backgroundColor={'rgba(0, 0, 0, 0.3)'}
             barStyle={'light-content'}
           />
-          {this.gradient}
           <ScrollView
             style={styles.scrollview}
             scrollEventThrottle={200}

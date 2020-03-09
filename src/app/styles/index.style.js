@@ -5,7 +5,9 @@ export const colors = {
   black: '#1a1917',
   gray: '#888888',
   background1: '#ecebe9',
-  background2: '#ecebe9',
+  background2: '#efeff3',
+  background3: '#fafafa',
+  background4: '#ffffff',
 };
 
 const {width, height} = Dimensions.get('screen');
@@ -21,8 +23,11 @@ export default StyleSheet.create({
     width: width,
     height: height,
   },
-  gradient: {
-    ...StyleSheet.absoluteFillObject,
+  container2: {
+    flex: 1,
+    backgroundColor: colors.background2,
+    width: width,
+    height: height,
   },
   scrollview: {
     flex: 1,
@@ -44,9 +49,6 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 20,
-  },
-  titleDark: {
-    color: colors.black,
   },
   subtitle: {
     marginTop: 5,
@@ -88,6 +90,7 @@ export default StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   cardStyle: {
     padding: 0,
@@ -226,5 +229,39 @@ export default StyleSheet.create({
   btnLetter: {
     width: 100,
     shadowColor: 'transparent',
+  },
+
+  card: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#CCCCCC',
+    borderWidth: 0.5,
+    width: '100%',
+    margin: 0,
+    padding: 0,
+  },
+
+  settingsTitle: {
+    paddingBottom: 10,
+    color: '#555',
+    paddingHorizontal: 10,
+    textTransform: 'uppercase',
+  },
+
+  settingsItem: {
+    borderBottomColor: '#CCCCCC',
+    borderBottomWidth: 0.5,
+    width: '100%',
+    paddingVertical: 10,
+    paddingRight: 20,
+    marginLeft: 10,
+  },
+
+  settingsText: {
+    fontSize: 16,
+    paddingTop: 5,
+  },
+
+  mTop20: {
+    marginTop: 20,
   },
 });

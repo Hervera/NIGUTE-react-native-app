@@ -10,6 +10,7 @@ import CategoriesStack from './categoriesStack';
 import AboutusStack from './aboutusStack';
 import ContactusStack from './contactusStack';
 import SubscribeStack from './subscribeStack';
+import SettingsStack from './settingsStack';
 
 const RootDrawerNavigator = createDrawerNavigator(
   {
@@ -19,6 +20,7 @@ const RootDrawerNavigator = createDrawerNavigator(
     Contactus: {screen: ContactusStack},
     Subscribe: {screen: SubscribeStack},
     Search: {screen: Search},
+    Settings: {screen: SettingsStack},
   },
   {
     hideStatusBar: false,
