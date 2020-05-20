@@ -7,16 +7,22 @@ import {topArticles, articlesList, bottomArticles} from '../dummy/articles';
 import styles, {colors} from '../styles/index.style';
 import {sliderWidth, itemWidth} from '../styles/sliderEntry.style';
 import ArticleCard from './shared/articleCard';
+import {fetchArticles} from '../actions';
+import {connect} from 'react-redux';
 
 const SLIDER_1_FIRST_ITEM = 1;
 
-export default class example extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: articlesList,
+      articlesList: articlesList,
       slider1ActiveSlide: SLIDER_1_FIRST_ITEM,
     };
+  }
+
+  componentDidMount() {
+    this.props.fetchArticles();
   }
 
   _renderItem({item, index}) {
@@ -80,11 +86,16 @@ export default class example extends Component {
   }
 
   listArticles(title) {
+    // const {articles} = this.props;
+    // console.log('This is it =================>', articles);
+    // this.setState({
+    //   articlesList: articles,
+    // });
     return (
       <View style={styles.articleList}>
         <Text style={[styles.title, {marginTop: 0}]}>{title}</Text>
         <FlatList
-          data={this.state.data}
+          data={this.state.articlesList}
           renderItem={({item: rowData}) => {
             return <ArticleCard article={rowData} />;
           }}
@@ -144,3 +155,20 @@ export default class example extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  // console.log('============>', state);
+  return {
+    articles: state.allArticles.articles.articles.data,
+    currentPage: state.allArticles.articles.articles.current_page,
+    totalArticles: state.allArticles.articles.articles.total,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchArticles: () => dispatch(fetchArticles()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
